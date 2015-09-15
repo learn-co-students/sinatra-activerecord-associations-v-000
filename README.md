@@ -1,13 +1,5 @@
 # ActiveRecord Associations in Sinatra
 
-##TEACHER OUTLINE
-+ Creating multiple tables
-+ Describe has many/belongs to relationships
-+ Setting up has_many, belongs_to relationship between models
-+ Discuss the use of primary keys as the link between models in ActiveRecord
-+ Should allude to other types of relationships (many to many, one to one, etc) but not discuss join tables.
-
-
 ## Objectives
 
 1. Create tables with ActiveRecord.
@@ -41,4 +33,73 @@ class CreateCats < ActiveRecord::Migration
   end
 end
 ```
-Like we said in the beginning, lets assume we already 
+#### What are primary keys
+ 
+A primary key uniquely identifies each record in a table, it must be unique and cannot have NULL values. Luckily, ActiveRecord will create the primary key for us and will also autoincrement it every time we save a new row in our table.
+
+Our `cats` table looks like this:
+
+| id  | name    | age | breed         |
+|-----|-----    |-----|------         |
+| 1   | Maru    | 3   | Scottish Fold |
+| 2   | Hannah  | 2   | Tabby         |
+| 3   | Patches | 2   | Calico        |
+
+
+Our `owners` table:
+
+| id  | name      |
+|-----|-----      |
+| 1   | Sophie    |
+| 2   | Ann       |
+
+Now, we need to tell our tables how to relate to each other. This is where we'll use a foreign key.
+
+#### What are foreign keys
+
+A foreign key points to a primary key in another table. In ActiveRecord we will use the `tablename_id` convention. To add the foreign key to our cats table, we will create another migration.
+
+```ruby
+class AddColumnToCats < ActiveRecord::Migration
+  def up
+    add_column :cats, :owner_id, :integer
+  end
+
+  def down
+    remove_column :cats, :owner_id
+  end
+end
+```
+
+Our `cats` table should look like this:
+
+| id  | name    | age | breed         | owner_id |
+|-----|-----    |-----|------         |-----     |
+| 1   | Maru    | 3   | Scottish Fold | 1        |
+| 2   | Hannah  | 2   | Tabby         | 2        |
+| 3   | Patches | 2   | Calico        | 1        |
+
+
+We now know how our table should look like, but we did not tell our application how to relate our models to each other.
+
+
+#### `belong_to` and `has_many` 
+
+Before we write our association, let us think for a minute. The way we  built our tables is, a cat belongs to an owner and an owner can have many cats.
+
+This translates into ruby like this:
+
+```ruby
+class Cat
+  belongs_to :owner
+end
+```
+
+```ruby
+class Owner
+  has_many :cats
+end
+```
+Whenever we use a `has_many` we also have to use the `belongs_to` and vise versa in the other model. ***Keep in mind:*** The model with the `belongs_to` association also has the foreign key.
+
+The `has_many`/`belongs_to` is the most used association, but there are others as well. You can read more about ActiveRecord Associations [here](http://guides.rubyonrails.org/association_basics.html).
