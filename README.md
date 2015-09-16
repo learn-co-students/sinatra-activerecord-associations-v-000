@@ -2,9 +2,8 @@
 
 ## Objectives
 
-1. Create tables with ActiveRecord.
-2. Understand the primary key and foreign key.
-4. Understand the has many/ belongs to relationship.
+1. Understand primary and foreign key.
+2. Understand the has many/ belongs to relationship.
 
 
 ### Primary Keys
