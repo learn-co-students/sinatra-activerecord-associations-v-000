@@ -6,6 +6,10 @@
 2. Understand the has many/ belongs to relationship.
 
 
+### Introduction 
+
+We learned about foreign and primary keys in sql and how they relate tables to one another - we're going to learn how to do this using ActiveRecord.
+
 ### Primary Keys
 
 Let's assume we have two tables in our database `cats` and `owners`, which we created from the command line using rake.
