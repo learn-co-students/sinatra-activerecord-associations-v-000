@@ -85,7 +85,7 @@ We now know how our table should look like, but we did not tell our application 
 
 #### `belong_to` and `has_many` 
 
-Before we write our association, let us think for a minute. The way we  built our tables is, a cat belongs to an owner and an owner can have many cats.
+Before we write our association let's think about our table structure: A cat belongs to an owner, and an owner can have many cats.
 
 This translates into ruby like this:
 
@@ -100,7 +100,7 @@ class Owner
   has_many :cats
 end
 ```
-Whenever we use a `has_many` we also have to use the `belongs_to` and vise versa in the other model. ***Keep in mind:*** The model with the `belongs_to` association also has the foreign key.
+Whenever we use a `has_many` we also have to use the `belongs_to` (and vice-versa) in the other model. ***Keep in mind:*** The model with the `belongs_to` association also has the foreign key.
 
 The `has_many`/`belongs_to` is the most used association, but there are others as well. You can read more about ActiveRecord Associations [here](http://guides.rubyonrails.org/association_basics.html).
 
