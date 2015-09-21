@@ -8,18 +8,18 @@
 
 ### Introduction 
 
-We learned about foreign and primary keys in sql and how they relate tables to one another - we're going to learn how to do this using ActiveRecord.
+Previously, we learned about foreign and primary keys in SQL and how they relate tables to one another. In this lesson, we're going to learn how to do this using ActiveRecord. This lab has pre-written code that you can follow along with - feel free to fork and clone the repo locally.
 
 ### Primary Keys
 
-Let's assume we have two tables in our database `cats` and `owners`, which we created from the command line using rake.
+Let's assume we have two tables in our database: `cats` and `owners`, which we created from the command line using rake.
 
-#### How to create a table with ActiveRecord
+#### Review: Creating a table with ActiveRecord
 
-Example on how to create a cats table from the command line:
+First, we create a cats table from the command line:
 `rake db:create_migration NAME="create_cats"`
 
-This will give us an empty migration in our `db/migrate/` folder. Now lets give our cats table attributes: `name`, `age` and `breed`. This will go into our up method. In the down method we will also tell the migration what should happen, if for any reason we want to rollback our migration. Here, it would be the opposite of `create table` which is `drop table`.
+This will give us an empty migration in our `db/migrate/` folder. Now lets give our cats table attributes: `name`, `age` and `breed`. This will go into our `up` method. In the `down` method we tell the migration what should happen if for any reason we want to roll back our migrations. Our instruction in the `down` method is the opposite of `create table`- `drop table`.
 
 ```ruby
 class CreateCats < ActiveRecord::Migration
@@ -37,9 +37,9 @@ class CreateCats < ActiveRecord::Migration
 end
 ```
 
-#### What are primary keys
+#### Review: Primary Keys
  
-A primary key uniquely identifies each record in a table, it must be unique and cannot have NULL values. Luckily, ActiveRecord will create the primary key for us and will also autoincrement it every time we save a new row in our table.
+A primary key uniquely identifies each record in a table. it must be unique and cannot have NULL values. Luckily, ActiveRecord will create the primary key for us and will also auto-increment it every time we save a new row in our table.
 
 Our `cats` table looks like this:
 
@@ -59,7 +59,7 @@ Our `owners` table:
 
 Now, we need to tell our tables how to relate to each other. This is where we'll use a foreign key.
 
-#### What are foreign keys
+#### Using Foreign Keys
 
 A foreign key points to a primary key in another table. In ActiveRecord we will use the `tablename_id` convention. To add the foreign key to our cats table, we will create another migration.
 
@@ -84,7 +84,7 @@ Our `cats` table should look like this:
 | 3   | Patches | 2   | Calico        | 1        |
 
 
-We now know how our table should look like, but we did not tell our application how to relate our models to each other.
+We now know what our table should look like. However, we haven't told our application how to relate the models to each other.
 
 
 #### `belong_to` and `has_many` 
