@@ -120,6 +120,5 @@ maru.save
 We used the `.create` method to instantiate and save the owner to our database. To instantiate the cat object we used the `.new` method, after that we set "Maru's" owner to the owner we created. Because the `.new` method did not save the cat object to our database the last line will persist the cat object to our database.
 
 
-The `has_many`/`belongs_to` is the most used association, but there are others as well. You can read more about ActiveRecord Associations [here](http://guides.rubyonrails.org/association_basics.html).
+The `has_many`/`belongs_to` relationship is the most used association, but there are others as well. You can read more about ActiveRecord Associations [here](http://guides.rubyonrails.org/association_basics.html).
 
-To take a look at the files we talk about, fork and clone this repo.
