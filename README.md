@@ -122,3 +122,5 @@ We used the `.create` method to instantiate and save the owner to our database. 
 
 The `has_many`/`belongs_to` relationship is the most used association, but there are others as well. You can read more about ActiveRecord Associations [here](http://guides.rubyonrails.org/association_basics.html).
 
+
+<a href='https://learn.co/lessons/sinatra-activerecord-associations' data-visibility='hidden'>View this lesson on Learn.co</a>
