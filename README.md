@@ -12,27 +12,23 @@ Previously, we learned about foreign and primary keys in SQL and how they relate
 
 ### Primary Keys
 
-Let's assume we have two tables in our database: `cats` and `owners`, which we created from the command line using rake.
+The end goal of this readme is to create a relationship in our app that mimics the real life cat-owner relationship: owners can **have many** cats and cats **belong to** an owner. Let's assume we have two tables in our database: `cats` and `owners`, which we created from the command line using rake.
 
 #### Review: Creating a table with ActiveRecord
 
 First, we create a cats table from the command line:
 `rake db:create_migration NAME="create_cats"`
 
-This will give us an empty migration in our `db/migrate/` folder. Now lets give our cats table attributes: `name`, `age` and `breed`. This will go into our `up` method. In the `down` method we tell the migration what should happen if for any reason we want to roll back our migrations. Our instruction in the `down` method is the opposite of `create table`- `drop table`.
+This will give us an empty migration in our `db/migrate/` folder. Now lets give our cats table attributes: `name`, `age` and `breed`. This will go into our `change` method.
 
 ```ruby
 class CreateCats < ActiveRecord::Migration
-  def up
+  def change
     create_table :cats do |t|
       t.string :name
       t.integer :age
       t.string :breed
     end
-  end
-  
-  def down
-    drop_table :cats
   end
 end
 ```
@@ -41,6 +37,21 @@ end
  
 A primary key uniquely identifies each record in a table. it must be unique and cannot have NULL values. Luckily, ActiveRecord will create the primary key for us and will also auto-increment it every time we save a new row in our table.
 
+Go ahead and use Tux to create three instances of the Cat class:
+
+```
+Cat.create(:name => "Maru", :age => 3, :breed => "Scottish Fold")
+Cat.create(:name => "Hannah", :age => 2, :breed => "Tabby")
+Cat.create(:name => "Patches", :age => 2, :breed => "Calico")
+```
+
+And two instances of our Owner class:
+
+```
+Owner.create(:name => "Sophie")
+Owner.create(:name => "Ann")
+
+```
 Our `cats` table looks like this:
 
 | id  | name    | age | breed         |
@@ -50,7 +61,7 @@ Our `cats` table looks like this:
 | 3   | Patches | 2   | Calico        |
 
 
-Our `owners` table:
+Our `owners` table looks like this:
 
 | id  | name      |
 |-----|-----      |
@@ -61,16 +72,14 @@ Now, we need to tell our tables how to relate to each other. This is where we'll
 
 #### Using Foreign Keys
 
-A foreign key points to a primary key in another table. In ActiveRecord we will use the `tablename_id` convention. To add the foreign key to our cats table, we will create another migration.
+A foreign key points to a primary key in another table. In ActiveRecord we will use the `tablename_id` convention. To add the foreign key to our cats table, we will create another migration. 
+
+The foreign key is always sits on the table of the object that belongs to. In this case, because cats belong to an owner, the owner_id becomes a column in the cats table.
 
 ```ruby
 class AddColumnToCats < ActiveRecord::Migration
-  def up
+  def change
     add_column :cats, :owner_id, :integer
-  end
-
-  def down
-    remove_column :cats, :owner_id
   end
 end
 ```
@@ -106,9 +115,10 @@ end
 ```
 Whenever we use a `has_many` we also have to use the `belongs_to` (and vice-versa) in the other model. ***Keep in mind:*** The model with the `belongs_to` association also has the foreign key.
 
+
 #### Creating objects
 
-After setting our associations, we can create a cat and a owner and save them to our database. 
+After setting our associations, we can create a cat and a owner and save them to our database. Try using Tux to play around. Create objects, view them, edit them, delete them!
 
 ```ruby
 sophie = Owner.create(name: "Sophie")
