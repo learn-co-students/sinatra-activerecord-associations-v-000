@@ -35,7 +35,7 @@ end
 
 #### Review: Primary Keys
  
-A primary key uniquely identifies each record in a table. it must be unique and cannot have NULL values. Luckily, ActiveRecord will create the primary key for us and will also auto-increment it every time we save a new row in our table.
+A primary key uniquely identifies each record in a table. It must be unique and cannot have NULL values. Luckily, ActiveRecord will create the primary key for us and will also auto-increment it every time we save a new row in our table.
 
 Go ahead and use Tux to create three instances of the Cat class:
 
