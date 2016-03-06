@@ -1,3 +1,4 @@
+Completed README
 # ActiveRecord Associations in Sinatra
 
 ## Objectives
