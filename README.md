@@ -74,7 +74,7 @@ Now, we need to tell our tables how to relate to each other. This is where we'll
 
 A foreign key points to a primary key in another table. In ActiveRecord we will use the `tablename_id` convention. To add the foreign key to our cats table, we will create another migration. 
 
-The foreign key is always sits on the table of the object that belongs to. In this case, because cats belong to an owner, the owner_id becomes a column in the cats table.
+The foreign key always sits on the table of the object that belongs to. In this case, because cats belong to an owner, the owner_id becomes a column in the cats table.
 
 ```ruby
 class AddColumnToCats < ActiveRecord::Migration
@@ -134,3 +134,5 @@ The `has_many`/`belongs_to` relationship is the most used association, but there
 
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations' title='ActiveRecord Associations in Sinatra'>ActiveRecord Associations in Sinatra</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations'>ActiveRecord Associations in Sinatra</a> on Learn.co and start learning to code for free.</p>
