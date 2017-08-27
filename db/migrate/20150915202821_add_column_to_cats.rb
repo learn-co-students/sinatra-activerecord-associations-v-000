@@ -4,6 +4,7 @@ class AddColumnToCats < ActiveRecord::Migration
   end
 
   def down
+
     remove_column :cats, :owner_id
   end
 end
