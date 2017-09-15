@@ -1,4 +1,5 @@
-class AddColumnToCats < ActiveRecord::Migration
+class AddColumnToCats < ActiveRecord::Migration[5.0]
+	
   def up
     add_column :cats, :owner_id, :integer
   end
