@@ -6,7 +6,7 @@
 2. Understand the has many/ belongs to relationship.
 
 
-### Introduction 
+### Introduction
 
 Previously, we learned about foreign and primary keys in SQL and how they relate tables to one another. In this lesson, we're going to learn how to do this using ActiveRecord. This lab has pre-written code that you can follow along with - feel free to fork and clone the repo locally.
 
@@ -34,7 +34,7 @@ end
 ```
 
 #### Review: Primary Keys
- 
+
 A primary key uniquely identifies each record in a table. It must be unique and cannot have NULL values. Luckily, ActiveRecord will create the primary key for us and will also auto-increment it every time we save a new row in our table.
 
 Go ahead and use Tux to create three instances of the Cat class:
@@ -72,7 +72,7 @@ Now, we need to tell our tables how to relate to each other. This is where we'll
 
 #### Using Foreign Keys
 
-A foreign key points to a primary key in another table. In ActiveRecord we will use the `tablename_id` convention. To add the foreign key to our cats table, we will create another migration. 
+A foreign key points to a primary key in another table. In ActiveRecord we will use the `tablename_id` convention. To add the foreign key to our cats table, we will create another migration.
 
 The foreign key always sits on the table of the object that belongs to. In this case, because cats belong to an owner, the owner_id becomes a column in the cats table.
 
@@ -96,7 +96,7 @@ Our `cats` table should look like this:
 We now know what our table should look like. However, we haven't told our application how to relate the models to each other.
 
 
-#### `belong_to` and `has_many` 
+#### `belong_to` and `has_many`
 
 Before we write our association let's think about our table structure: A cat belongs to an owner, and an owner can have many cats.
 
@@ -128,6 +128,7 @@ maru.save
 ```
 
 We used the `.create` method to instantiate and save the owner to our database. To instantiate the cat object we used the `.new` method, after that we set "Maru's" owner to the owner we created. Because the `.new` method did not save the cat object to our database the last line will persist the cat object to our database.
+
 
 
 The `has_many`/`belongs_to` relationship is the most used association, but there are others as well. You can read more about ActiveRecord Associations [here](http://guides.rubyonrails.org/association_basics.html).
