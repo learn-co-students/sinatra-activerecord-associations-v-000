@@ -1,3 +1,4 @@
+
 class CreateCats < ActiveRecord::Migration
   def up
     create_table :cats do |t|
