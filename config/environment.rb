@@ -7,6 +7,6 @@ ActiveRecord::Base.establish_connection(
   :adapter => "sqlite3",
   :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
 )
-
+#test
 require './app'
 require_all 'models'
