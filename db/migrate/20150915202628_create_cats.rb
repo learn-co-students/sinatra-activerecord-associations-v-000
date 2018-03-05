@@ -1,4 +1,4 @@
-class CreateCats < ActiveRecord::Migration
+class CreateCats < ActiveRecord::Migration[5.1]
   def up
     create_table :cats do |t|
       t.string :name
@@ -6,7 +6,7 @@ class CreateCats < ActiveRecord::Migration
       t.string :breed
     end
   end
-  
+
   def down
     drop_table :cats
   end
