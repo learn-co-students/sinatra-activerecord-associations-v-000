@@ -118,7 +118,7 @@ Whenever we use a `has_many` we also have to use the `belongs_to` (and vice-vers
 
 #### Creating objects
 
-After setting our associations, we can create a cat and a owner and save them to our database. Try using Tux to play around. Create objects, view them, edit them, delete them!
+After setting our associations, we can create a cat and an owner and save them to our database. Try using Tux to play around. Create objects, view them, edit them, delete them!
 
 ```ruby
 sophie = Owner.create(name: "Sophie")
