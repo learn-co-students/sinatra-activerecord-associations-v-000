@@ -134,5 +134,3 @@ The `has_many`/`belongs_to` relationship is the most used association, but there
 
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations' title='ActiveRecord Associations in Sinatra'>ActiveRecord Associations in Sinatra</a> on Learn.co and start learning to code for free.</p>
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations'>ActiveRecord Associations in Sinatra</a> on Learn.co and start learning to code for free.</p>
