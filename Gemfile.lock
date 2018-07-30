@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/bmabey/database_cleaner.git
-  revision: a8d68a8b253d2ab5fcc07175db4ade27b6494d5b
+  revision: 14626296ef31b34f7704593667db1d41d81825ab
   specs:
     database_cleaner (1.7.0)
 
@@ -39,9 +39,9 @@ GEM
     pry-nav (0.2.4)
       pry (>= 0.9.10, < 0.11.0)
     rack (2.0.5)
-    rack-protection (2.0.1)
+    rack-protection (2.0.3)
       rack
-    rack-test (1.0.0)
+    rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rake (12.3.1)
     require_all (2.0.0)
@@ -66,10 +66,10 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
-    sinatra (2.0.1)
+    sinatra (2.0.3)
       mustermann (~> 1.0)
       rack (~> 2.0)
-      rack-protection (= 2.0.1)
+      rack-protection (= 2.0.3)
       tilt (~> 2.0)
     sinatra-activerecord (2.0.13)
       activerecord (>= 3.2)
@@ -105,4 +105,4 @@ DEPENDENCIES
   tux
 
 BUNDLED WITH
-   1.16.0
+   1.16.3
