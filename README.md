@@ -96,7 +96,7 @@ Our `cats` table should look like this:
 We now know what our table should look like. However, we haven't told our application how to relate the models to each other.
 
 
-#### `belong_to` and `has_many` 
+#### `belongs_to` and `has_many` 
 
 Before we write our association let's think about our table structure: A cat belongs to an owner, and an owner can have many cats.
 
