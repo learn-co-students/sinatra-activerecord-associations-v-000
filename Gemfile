@@ -3,6 +3,8 @@ source 'http://rubygems.org'
 gem 'activerecord', '4.2.5', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 
+gem 'learn-co', '3.8.12'
+
 gem 'sinatra'
 gem 'sqlite3'
 gem 'tux'
