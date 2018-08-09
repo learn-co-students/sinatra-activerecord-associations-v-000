@@ -1,3 +1,3 @@
 class Owner < ActiveRecord::Base
-  has_many :cats
+  has_many :cats 
 end
