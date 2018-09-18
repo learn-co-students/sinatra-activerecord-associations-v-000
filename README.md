@@ -5,7 +5,6 @@
 1. Understand primary and foreign key.
 2. Understand the has many/ belongs to relationship.
 
-
 ### Introduction 
 
 Previously, we learned about foreign and primary keys in SQL and how they relate tables to one another. In this lesson, we're going to learn how to do this using ActiveRecord. This lab has pre-written code that you can follow along with - feel free to fork and clone the repo locally.
