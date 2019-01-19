@@ -1,5 +1,5 @@
 # ActiveRecord Associations in Sinatra
-
+test
 ## Objectives
 
 1. Understand primary and foreign key.
