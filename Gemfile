@@ -14,4 +14,3 @@ gem 'rack-test'
 gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 gem 'require_all'
 gem 'json', '>=1.8.3'
-gem 'rails-erd', group: :development
