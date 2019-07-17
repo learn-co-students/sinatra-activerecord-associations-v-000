@@ -6,7 +6,7 @@ class CreateCats < ActiveRecord::Migration
       t.string :breed
     end
   end
-  
+  3.5
   def down
     drop_table :cats
   end
