@@ -11,3 +11,5 @@ class CreateCats < ActiveRecord::Migration
     drop_table :cats
   end
 end
+
+#Comment
