@@ -22,7 +22,7 @@ First, we create a cats table from the command line:
 This will give us an empty migration in our `db/migrate/` folder. Now lets give our cats table attributes: `name`, `age` and `breed`. This will go into our `change` method.
 
 ```ruby
-class CreateCats < ActiveRecord::Base
+class CreateCats < ActiveRecord::Migration
   def change
     create_table :cats do |t|
       t.string :name
@@ -77,7 +77,7 @@ A foreign key points to a primary key in another table. In ActiveRecord we will 
 The foreign key always sits on the table of the object that belongs to. In this case, because cats belong to an owner, the owner_id becomes a column in the cats table.
 
 ```ruby
-class AddColumnToCats < ActiveRecord::Base
+class AddColumnToCats < ActiveRecord::Migration
   def change
     add_column :cats, :owner_id, :integer
   end
