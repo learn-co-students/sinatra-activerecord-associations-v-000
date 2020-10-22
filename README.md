@@ -1,4 +1,4 @@
-# ActiveRecord Associations in Sinatra
+# Active Record Associations in Sinatra
 
 ## Objectives
 
